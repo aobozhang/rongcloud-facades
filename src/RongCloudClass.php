@@ -20,7 +20,7 @@ use Cache;
  * print_r($r);
  */
 
-class ServerAPI
+class RongCloudClass
 {
     private $appKey;                //appKey
     private $appSecret;             //secret
@@ -56,10 +56,15 @@ class ServerAPI
             if(empty($portraitUri))
                 throw new Exception('用户头像 URI 不能为空');
 
-            $ret = $this->curl('/user/getToken',array('userId'=>$userId,'name'=>$name,'portraitUri'=>$portraitUri));
+            $ret = Cache::rememberForever($userId, function() use($userId, $name, $portraitUri){
+                return $this->curl('/user/getToken',array('userId'=>$userId,'name'=>$name,'portraitUri'=>$portraitUri));
+            });
+            
             if(empty($ret))
                 throw new Exception('请求失败');
+
             return $ret;
+
         }catch (Exception $e) {
             print_r($e->getMessage());
         }
