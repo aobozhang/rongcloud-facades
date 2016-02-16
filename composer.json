@@ -1,0 +1,27 @@
+{
+    "name": "aobozhang/rongcloud-facades",
+    "description": "used RongCloud as laravel facades",
+    "keywords": ["rongcloud", "RongCloud", "laravel", "facades"],
+    "type": "library",
+    "homepage": "https://github.com/aobozhang",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "authors": [
+        {
+            "name": "Aobo",
+            "email": "aobozhang@gmail.com",
+            "homepage": "https://github.com/aobozhang",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aobo\\RongCloud\\": "src/"
+        }
+    },
+    "suggest": {
+        "laravel/framework": "5.1.*"
+    }
+}
