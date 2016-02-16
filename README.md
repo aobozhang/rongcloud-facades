@@ -10,7 +10,7 @@ used rongcloud as Normal laravel facades
 * First:  
 
 ```
-composer require aobozhang/RongFacades
+composer require aobozhang/rongcloud-facades '@dev'
 ```
 
 * Second:  
