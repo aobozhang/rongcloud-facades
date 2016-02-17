@@ -10,7 +10,9 @@ used rongcloud as Normal laravel facades
 * First:  
 
 ```
-composer require aobozhang/rongcloud-facades '@dev'
+composer require aobozhang/rongcloud-facades '@dev'   //get latest dev version
+composer require aobozhang/rongcloud-facades          //get stable version
+
 ```
 
 * Second:  
@@ -45,6 +47,12 @@ php artisan vendor:publish
 
 ```php
 use RongCloud;
+
+//...
+
+$res = RongCloud::getToken($id,$name,$portraitUri);
+
+var_dump($res);
 
 ```  
 
